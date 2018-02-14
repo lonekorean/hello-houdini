@@ -1,0 +1,15 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #eee;
+}
+
+.area {
+    width: 400px;
+    height: 200px;
+    border: 4px solid blue;
+    background-image: paint(content-placeholder);
+}
