@@ -1,0 +1,40 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin: 20px;
+}
+
+.slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder {
+    width: 100px;
+    height: 100px;
+    background: #fff paint(placeholder-box);
+    overflow: auto;
+    resize: both;
+}
+
+.slot:nth-child(1) .placeholder {
+    border: 2px solid green;
+}
+
+.slot:nth-child(2) .placeholder {
+    border: 6px solid purple;
+}
+
+.slot:nth-child(3) .placeholder {
+    border: 10px solid red;
+}

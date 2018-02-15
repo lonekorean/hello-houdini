@@ -1,0 +1,71 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    font: 1.25rem/1 'Mukta Mahee', sans-serif;
+    color: #333;
+    background-color: #eee;
+}
+
+.placeholder {
+    max-width: 100%;
+    border: 2px solid #666;
+    background: #fff paint(placeholder-box);
+    overflow: auto;
+    resize: both;
+}
+
+header {
+    width: 600px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 600px;
+    margin: 40px auto 0;
+}
+
+main {
+    width: 440px;
+}
+
+h1 {
+    margin: 0;
+    font-weight: normal;
+}
+
+p {
+    line-height: 1.25;
+}
+
+.row {
+    margin: 0 10px 0 -10px;
+}
+
+.row::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+main .placeholder {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+aside {
+    width: 140px;
+    margin-left: 20px;
+}
+
+aside .placeholder {
+    width: 140px;
+    height: 320px;
+    margin: 0 auto;
+}
