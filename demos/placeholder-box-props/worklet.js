@@ -1,7 +1,24 @@
 class PlaceholderBoxPainter {
-    paint(ctx, size) {
+    static get inputProperties() {
+        return ['border-top-width', 'border-top-color'];
+    }
+
+    paint(ctx, size, props) {
+        // default values
         ctx.lineWidth = 2;
         ctx.strokeStyle = '#666';
+
+        // set line width to top border width (if exists)
+        let borderTopWidthProp = props.get('border-top-width');
+        if (borderTopWidthProp) {
+            ctx.lineWidth = parseFloat(borderTopWidthProp);
+        }
+
+        // set stroke style to top border color (if exists)
+        let borderTopColorProp = props.get('border-top-color');
+        if (borderTopColorProp) {
+            ctx.strokeStyle = borderTopColorProp.toString();
+        }
 
         // draw line from top left to bottom right
         ctx.beginPath();

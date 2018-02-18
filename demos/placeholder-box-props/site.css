@@ -10,7 +10,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    margin: 20px;
+    margin: 0 20px;
 }
 
 .slot {
@@ -20,21 +20,21 @@ body {
 }
 
 .placeholder {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background: #fff paint(placeholder-box);
     overflow: auto;
     resize: both;
 }
 
 .slot:nth-child(1) .placeholder {
-    border: 2px solid green;
+    border: 2px solid #fd7e14;
 }
 
 .slot:nth-child(2) .placeholder {
-    border: 6px solid purple;
+    border: 6px solid #228be6;
 }
 
 .slot:nth-child(3) .placeholder {
-    border: 10px solid red;
+    border: 10px solid #e64980;
 }
