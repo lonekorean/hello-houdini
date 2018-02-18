@@ -11,6 +11,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     margin: 0 20px;
+    background: linear-gradient(to bottom, #70e1f5, #ffd194);
 }
 
 .slot {
@@ -36,5 +37,5 @@ body {
 }
 
 .slot:nth-child(3) .placeholder {
-    border: 10px solid #e64980;
+    border: 1rem solid #e64980;
 }

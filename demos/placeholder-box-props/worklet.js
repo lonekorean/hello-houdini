@@ -11,7 +11,7 @@ class PlaceholderBoxPainter {
         // set line width to top border width (if exists)
         let borderTopWidthProp = props.get('border-top-width');
         if (borderTopWidthProp) {
-            ctx.lineWidth = parseFloat(borderTopWidthProp);
+            ctx.lineWidth = borderTopWidthProp.value;
         }
 
         // set stroke style to top border color (if exists)
