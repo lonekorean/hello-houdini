@@ -17,5 +17,7 @@ body {
     right: 20px;
     top: 50%;
     bottom: 20px;
+    --tooth-width: 100px;
+    --tooth-height: 10vw;
     background: paint(jagged-edge);
 }

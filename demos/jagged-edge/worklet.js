@@ -1,29 +1,35 @@
 class JaggedEdgePainter {
+    static get inputProperties() {
+        return ['--tooth-width', '--tooth-height'];
+    }
+
     paint(ctx, size, props) {
-        let toothWidth = 40;
-        let toothHeight = 20;
+        let toothWidth = props.get('--tooth-width').value;
+        let toothHeight = props.get('--tooth-height').value;
 
         // lots of math to ensure teeth are collectively centered
         let spaceBeforeCenterTooth = (size.width - toothWidth) / 2;
         let teethBeforeCenterTooth = Math.ceil(spaceBeforeCenterTooth / toothWidth);
-        let startX = spaceBeforeCenterTooth - teethBeforeCenterTooth * toothWidth;
         let totalTeeth = teethBeforeCenterTooth * 2 + 1;
+        let startX = spaceBeforeCenterTooth - teethBeforeCenterTooth * toothWidth;
 
-        // draw each tooth
+        // start drawing teeth from left
+        ctx.beginPath();
+        ctx.moveTo(startX, toothHeight);
+
+        // draw the top zig-zag for all the teeth
         for (let i = 0; i < totalTeeth; i++) {
             let x = startX + toothWidth * i;
 
-            // draws triangle from bottom left to top to bottom right
-            ctx.beginPath();
-            ctx.moveTo(x, toothHeight);
             ctx.lineTo(x + toothWidth / 2, 0);
             ctx.lineTo(x + toothWidth, toothHeight);
-            ctx.closePath();
-            ctx.fill();
         }
 
-        // fill area below teeth
-        ctx.fillRect(0, toothHeight, size.width, size.height);
+        // surround the area below the teeth and fill it all in
+        ctx.lineTo(size.width, size.height);
+        ctx.lineTo(0, size.height);
+        ctx.closePath();
+        ctx.fill();
     }
 }
 

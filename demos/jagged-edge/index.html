@@ -8,6 +8,16 @@
         <link href="site.css" rel="stylesheet">
 
         <script>
+            CSS.registerProperty({
+                name: '--tooth-width',
+                syntax: '<length>',
+                initialValue: '40px'
+            });
+            CSS.registerProperty({
+                name: '--tooth-height',
+                syntax: '<length>',
+                initialValue: '20px'
+            });
             CSS.paintWorklet.addModule('worklet.js');
         </script>
     </head>
