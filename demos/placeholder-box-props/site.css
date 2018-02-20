@@ -10,13 +10,13 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    align-items: center;
     margin: 0 20px;
     background: linear-gradient(to bottom, #70e1f5, #ffd194);
 }
 
 .slot {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
