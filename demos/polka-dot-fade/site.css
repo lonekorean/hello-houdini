@@ -1,0 +1,33 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    align-items: center;
+    margin: 0 40px;
+    background: #fff;
+    font: 1rem/1.25 'Mukta Mahee', sans-serif;
+}
+
+.dots {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+    background: paint(polka-dot-fade);
+    animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        --dot-scale: 5;
+    }
+}

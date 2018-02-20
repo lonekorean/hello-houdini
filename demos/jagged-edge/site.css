@@ -12,7 +12,7 @@ body {
     grid-gap: 20px;
     align-items: center;
     margin: 0 20px;
-    background: linear-gradient(to bottom, #00d2ff, #3a7bd5);
+    background: linear-gradient(to bottom right, #74ebd5, #acb6e5);
     font: 1rem/1.25 'Mukta Mahee', sans-serif;
 }
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Polka Dot Fade</title>
+        <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
+        <link href="site.css" rel="stylesheet">
+
+        <script>
+            CSS.registerProperty({
+                name: '--dot-radius',
+                syntax: '<length>',
+                initialValue: '5px'
+            });
+            CSS.registerProperty({
+                name: '--dot-spacing',
+                syntax: '<length>',
+                initialValue: '20px'
+            });
+            CSS.registerProperty({
+                name: '--dot-scale',
+                syntax: '<number>',
+                initialValue: '0'
+            });
+            CSS.paintWorklet.addModule('worklet.js');
+        </script>
+    </head>
+    <body>
+        <div class="dots"></div>
+    </body>
+</html>

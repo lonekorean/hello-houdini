@@ -22,7 +22,7 @@ body {
     position: relative;
     height: 300px;
     border: 4px solid #fff;
-    background: linear-gradient(to right, #444, #000);
+    background: linear-gradient(to right, #666, #000);
 }
 
 .jagged {
@@ -36,7 +36,7 @@ body {
 }
 
 .slot:nth-child(1) .jagged {
-    background: linear-gradient(to right, #c02425, #f0cb35);
+    background: linear-gradient(to right, #22c1c3, #fdbb2d);
 }
 
 .slot:nth-child(2) .jagged {
