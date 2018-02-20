@@ -23,7 +23,7 @@ body {
 .placeholder {
     width: 120px;
     height: 120px;
-    background: #fff paint(placeholder-box);
+    background: #fff paint(placeholder-box-props);
     overflow: auto;
     resize: both;
 }

@@ -1,4 +1,4 @@
-class PlaceholderBoxPainter {
+class PlaceholderBoxPropsPainter {
     static get inputProperties() {
         return ['border-top-width', 'border-top-color'];
     }
@@ -34,4 +34,4 @@ class PlaceholderBoxPainter {
     }
 }
 
-registerPaint('placeholder-box', PlaceholderBoxPainter);
+registerPaint('placeholder-box-props', PlaceholderBoxPropsPainter);

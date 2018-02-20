@@ -1,0 +1,47 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    align-items: center;
+    margin: 0 40px;
+    background: #000;
+    font: 1rem/1.25 'Mukta Mahee', sans-serif;
+}
+
+.slot {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 300px;
+    border: 4px solid #fff;
+    background: linear-gradient(to right, #444, #000);
+}
+
+.jagged {
+    position: absolute;
+    top: 30%;
+    bottom: 0;
+    width: 100%;
+    --tooth-width: 80px;
+    --tooth-height: 30px;
+    -webkit-mask-image: paint(jagged-edge-mask);
+}
+
+.slot:nth-child(1) .jagged {
+    background: linear-gradient(to right, #c02425, #f0cb35);
+}
+
+.slot:nth-child(2) .jagged {
+    /* Pixel art from Iconoclasts, fun game! http://www.playiconoclasts.com/ */
+    background: url('iconoclasts.png');
+    background-size: cover;
+    background-position: center;
+}
