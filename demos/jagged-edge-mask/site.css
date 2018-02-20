@@ -43,5 +43,5 @@ body {
     /* Pixel art from Iconoclasts, fun game! http://www.playiconoclasts.com/ */
     background: url('iconoclasts.png');
     background-size: cover;
-    background-position: center;
+    background-position: 50% 0;
 }

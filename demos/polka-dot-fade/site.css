@@ -12,7 +12,7 @@ body {
     grid-gap: 40px;
     align-items: center;
     margin: 0 40px;
-    background: #fff;
+    background: #000;
     font: 1rem/1.25 'Mukta Mahee', sans-serif;
 }
 
@@ -22,12 +22,17 @@ body {
     right: 20%;
     bottom: 20%;
     left: 20%;
-    background: paint(polka-dot-fade);
-    animation: pulse 5s infinite;
+    --dot-radius: 1px;
+    --dot-spacing: 20px;
+    -webkit-mask-image: paint(polka-dot-fade);
+    background: url('iconoclasts.png');
+    background-size: cover;
+    background-position: center;
+    animation: pulse 20s infinite;
 }
 
 @keyframes pulse {
     50% {
-        --dot-scale: 5;
+        --dot-scale: 10;
     }
 }
