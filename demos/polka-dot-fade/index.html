@@ -19,9 +19,14 @@
                 initialValue: '20px'
             });
             CSS.registerProperty({
-                name: '--dot-scale',
-                syntax: '<number>',
+                name: '--dot-zoom-radius',
+                syntax: '<length>',
                 initialValue: '0'
+            });
+            CSS.registerProperty({
+                name: '--dot-swipe-position',
+                syntax: '<percentage>',
+                initialValue: '0%'
             });
             CSS.paintWorklet.addModule('worklet.js');
         </script>

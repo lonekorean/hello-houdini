@@ -1,40 +1,49 @@
 class PolkaDotFadePainter {
     static get inputProperties() {
-        return ['--dot-radius', '--dot-spacing', '--dot-scale'];
+        return ['--dot-radius', '--dot-spacing', '--dot-zoom-radius', '--dot-swipe-position'];
     }
 
     paint(ctx, size, props) {
         let dotRadius = props.get('--dot-radius').value;
         let dotSpacing = props.get('--dot-spacing').value;
-        let dotScale = props.get('--dot-scale').value;
+        let dotZoomRadius = props.get('--dot-zoom-radius').value;
+        let dotSwipePosition = props.get('--dot-swipe-position').value;
 
         ctx.fillStyle = '#999';
 
         let startX = this.startOffset(size.width, dotSpacing);
+        let stopX = size.width + dotSpacing + dotRadius;
         let startY = this.startOffset(size.height, dotSpacing);
-        console.log(startX, startY);
-
-        let cornerDistance = this.distanceFromMidpoint(0, 0, size);
+        let stopY = size.height + dotSpacing + dotRadius;
 
         let isStaggerRow = false;
-        for (let y = 0; y < size.height + dotSpacing + dotRadius; y += dotSpacing) {
-            let staggerOffset = isStaggerRow ? dotSpacing : 0;
-            for (let x = 0; x < size.width + dotSpacing + dotRadius; x += dotSpacing * 2) {
-                let newX = startX + x + staggerOffset;
-                let newY = startY + y;
-                let percentOut = this.distanceFromMidpoint(newX, newY, size) / cornerDistance;
-                let radius = Math.min(Math.max(dotRadius / percentOut * dotScale, dotRadius), dotSpacing);
+        for (let y = startY; y < stopY; y += dotSpacing) {
+            for (let x = startX; x < stopX; x += dotSpacing * 2) {
+                let staggerX = x + (isStaggerRow ? dotSpacing : 0);
+
+                let fadeDistance = 300;
+                let swipeX = dotSwipePosition / 100 * size.width;
+                let calcRadius;
+                if (swipeX > staggerX + fadeDistance) {
+                    // swipe is beyond this dot
+                    calcRadius = dotZoomRadius;
+                } else if (swipeX < staggerX - fadeDistance) {
+                    // swipe is before dot
+                    calcRadius = dotRadius
+                } else {
+                    // within fade range
+                    let zoomRange = dotZoomRadius - dotRadius;
+                    let per = (swipeX - staggerX) / (fadeDistance * 2);
+                    let adjust = zoomRange * per;
+                    calcRadius = dotZoomRadius + adjust;
+                }
 
                 ctx.beginPath();
-                ctx.arc(newX, newY, radius, 0, 2 * Math.PI);
+                ctx.arc(staggerX, y, calcRadius, 0, 2 * Math.PI);
                 ctx.fill();
             }
             isStaggerRow = !isStaggerRow;
         }
-    }
-
-    distanceFromMidpoint(x, y, size) {
-        return Math.sqrt((x - size.width / 2) ** 2 + (y - size.height / 2) ** 2);
     }
 
     startOffset(length, dotSpacing) {
