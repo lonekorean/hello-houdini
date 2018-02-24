@@ -22,20 +22,15 @@ body {
     right: 20%;
     bottom: 20%;
     left: 20%;
-    --dot-radius: 0px;
     --dot-spacing: 20px;
-    --dot-zoom-radius: 20px;
-    --dot-swipe-position: -60%;
+    --dot-fade-offset: -100%;
     -webkit-mask-image: paint(polka-dot-fade);
-    xbackground: url('iconoclasts.png');
-    background: linear-gradient(to right, #ff5f6d, #ffc371);
-    background-size: cover;
-    background-position: center;
-    animation: pulse 10s infinite linear;
+    background: linear-gradient(to right, #fc466b, #3f5efb);
+    animation: pulse 3s infinite linear;
 }
 
 @keyframes pulse {
     50% {
-        --dot-swipe-position: 100%;
+        --dot-fade-offset: 100%;
     }
 }
