@@ -1,12 +1,14 @@
 class PolkaDotFadePainter {
     static get inputProperties() {
-        return ['--dot-spacing', '--dot-fade-offset'];
+        return ['--dot-spacing', '--dot-fade-offset', '--dot-color'];
     }
 
     paint(ctx, size, props) {
         let dotSpacing = props.get('--dot-spacing').value;
         let dotFadeOffset = props.get('--dot-fade-offset').value;
+        let dotColor = props.get('--dot-color').toString();
 
+        ctx.fillStyle = dotColor;
         for (let y = 0; y < size.height + dotSpacing; y += dotSpacing) {
             for (let x = 0; x < size.width + dotSpacing; x += dotSpacing * 2) {
                 // every other row shifts x to create staggered dots

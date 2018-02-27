@@ -1,0 +1,47 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    font: 1rem/1.25 'Mukta Mahee', sans-serif;
+}
+
+.polka-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+    --dot-spacing: 20px;
+    --dot-fade-offset: 0%;
+    --dot-color: #fc466b;
+    color: #fff;
+    background: paint(polka-dot-fade);
+    font-size: 8rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.animate {
+    animation: pulse 4s infinite linear;
+}
+
+@keyframes pulse {
+    0% {
+        --dot-fade-offset: 0%;
+        --dot-color: #fc466b;
+    }
+    50% {
+        --dot-fade-offset: 100%;
+        --dot-color: #3f5efb;
+    }
+}
