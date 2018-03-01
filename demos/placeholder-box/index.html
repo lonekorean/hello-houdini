@@ -4,11 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Placeholder Box</title>
-        <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:400,700" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
         <link href="site.css" rel="stylesheet">
 
         <script>
-            CSS.paintWorklet.addModule('worklet.js');
+            if ('paintWorklet' in CSS) {
+                CSS.paintWorklet.addModule('worklet.js');
+            } else {
+                document.querySelector('html').classList.add('no-support');
+            }
         </script>
     </head>
     <body>
@@ -27,6 +32,12 @@
             <aside>
                 <div class="placeholder"></div>
             </aside>
+        </div>
+
+        <div class="warning">
+            <i class="fas fa-exclamation-triangle"></i><br>
+            This Houdini demo requires the <strong>CSS Paint API</strong>.<br>
+            Use <strong>Chrome</strong>.
         </div>
     </body>
 </html>

@@ -12,7 +12,8 @@ body {
     grid-gap: 20px;
     align-items: center;
     margin: 0 20px;
-    background: linear-gradient(to bottom, #70e1f5, #ffd194);
+    background-image: linear-gradient(to bottom, #70e1f5, #ffd194);
+    font: 1rem/1.25 'Mukta Mahee', sans-serif;
 }
 
 .slot {
@@ -21,9 +22,10 @@ body {
 }
 
 .placeholder {
+    background: #fff paint(placeholder-box-props);
+
     width: 120px;
     height: 120px;
-    background: #fff paint(placeholder-box-props);
     overflow: auto;
     resize: both;
 }
@@ -38,4 +40,26 @@ body {
 
 .slot:nth-child(3) .placeholder {
     border: 1rem solid #e64980;
+}
+
+.warning {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 20px;
+    border-top: 4px dashed #e8590c;
+    background-color: #ffe8cc;
+    color: #e8590c;
+    text-align: center;
+}
+
+.no-support .warning {
+    display: block;
+}
+
+.warning .fas {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }

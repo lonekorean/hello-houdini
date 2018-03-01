@@ -21,18 +21,19 @@ body {
     justify-content: center;
     position: relative;
     height: 300px;
-    border: 4px solid #fff;
-    background: linear-gradient(to right, #666, #000);
+    border: 1px solid #fff;
+    background-image: linear-gradient(to right, #444, #000);
 }
 
 .jagged {
+    --tooth-width: 80px;
+    --tooth-height: 30px;
+    -webkit-mask-image: paint(jagged-edge-mask);
+
     position: absolute;
     top: 30%;
     bottom: 0;
     width: 100%;
-    --tooth-width: 80px;
-    --tooth-height: 30px;
-    -webkit-mask-image: paint(jagged-edge-mask);
 }
 
 .slot:nth-child(1) .jagged {
@@ -44,4 +45,26 @@ body {
     background: url('iconoclasts.png');
     background-size: cover;
     background-position: 50% 0;
+}
+
+.warning {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 20px;
+    border-top: 4px dashed #e8590c;
+    background-color: #ffe8cc;
+    color: #e8590c;
+    text-align: center;
+}
+
+.no-support .warning {
+    display: block;
+}
+
+.warning .fas {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }

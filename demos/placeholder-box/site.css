@@ -4,15 +4,16 @@
 
 body {
     margin: 20px;
-    font: 1.25rem/1 'Mukta Mahee', sans-serif;
-    color: #333;
+    color: #1864ab;
     background-color: #eee;
+    font: 1rem/1.25 'Mukta Mahee', sans-serif;
 }
 
 .placeholder {
+    background: #fff paint(placeholder-box);
+
     max-width: 100%;
     border: 2px solid #666;
-    background: #fff paint(placeholder-box);
     overflow: auto;
     resize: both;
 }
@@ -27,6 +28,8 @@ header {
     display: flex;
     width: 600px;
     margin: 40px auto 0;
+    font-size: 1.25rem;
+    line-height: 1;
 }
 
 main {
@@ -68,4 +71,26 @@ aside .placeholder {
     width: 140px;
     height: 320px;
     margin: 0 auto;
+}
+
+.warning {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 20px;
+    border-top: 4px dashed #e8590c;
+    background-color: #ffe8cc;
+    color: #e8590c;
+    text-align: center;
+}
+
+.no-support .warning {
+    display: block;
+}
+
+.warning .fas {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }

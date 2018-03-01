@@ -12,7 +12,7 @@ body {
     grid-gap: 20px;
     align-items: center;
     margin: 0 20px;
-    background: linear-gradient(to bottom right, #74ebd5, #acb6e5);
+    background-image: linear-gradient(to bottom right, #74ebd5, #acb6e5);
     font: 1rem/1.25 'Mukta Mahee', sans-serif;
 }
 
@@ -25,12 +25,13 @@ body {
 }
 
 .jagged {
+    background: paint(jagged-edge);
+
     position: absolute;
     top: 30%;
     bottom: 0;
     width: 100%;
     color: #fff;
-    background: paint(jagged-edge);
 }
 
 .slot:nth-child(1) .jagged {
@@ -52,4 +53,26 @@ body {
     position: absolute;
     bottom: 10px;
     left: 10px;
+}
+
+.warning {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 20px;
+    border-top: 4px dashed #e8590c;
+    background-color: #ffe8cc;
+    color: #e8590c;
+    text-align: center;
+}
+
+.no-support .warning {
+    display: block;
+}
+
+.warning .fas {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }

@@ -4,21 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Jagged Edge with Mask</title>
-        <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:400,700" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
         <link href="site.css" rel="stylesheet">
 
         <script>
-            CSS.registerProperty({
-                name: '--tooth-width',
-                syntax: '<length>',
-                initialValue: '40px'
-            });
-            CSS.registerProperty({
-                name: '--tooth-height',
-                syntax: '<length>',
-                initialValue: '20px'
-            });
-            CSS.paintWorklet.addModule('worklet.js');
+            if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in window) {
+                CSS.registerProperty({
+                    name: '--tooth-width',
+                    syntax: '<length>',
+                    initialValue: '40px'
+                });
+                CSS.registerProperty({
+                    name: '--tooth-height',
+                    syntax: '<length>',
+                    initialValue: '20px'
+                });
+                CSS.paintWorklet.addModule('worklet.js');
+            } else {
+                document.querySelector('html').classList.add('no-support');
+            }
         </script>
     </head>
     <body>
@@ -28,5 +33,11 @@
         <div class="slot">
             <div class="jagged"></div>
         </div>
+
+        <div class="warning">
+            <i class="fas fa-exclamation-triangle"></i><br>
+            This Houdini demo requires the <strong>CSS Paint API</strong>, <strong>CSS Properties and Values API</strong>, and <strong>Typed OM</strong>.<br>
+            Use <strong>Chrome</strong> and go to <strong>chrome://flags</strong> and enable <strong>Experimental Web Platform features</strong>.
+        </div>    
     </body>
 </html>
