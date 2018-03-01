@@ -13,6 +13,11 @@ body {
 }
 
 .polka-dot {
+    --dot-spacing: 20px;
+    --dot-fade-offset: 0%;
+    --dot-color: #fc466b;
+    background: paint(polka-dot-fade);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,27 +26,46 @@ body {
     right: 40px;
     bottom: 40px;
     left: 40px;
-    --dot-spacing: 20px;
-    --dot-fade-offset: 0%;
-    --dot-color: #fc466b;
     color: #fff;
-    background: paint(polka-dot-fade);
-    font-size: 8rem;
-    cursor: pointer;
+    font-size: 6rem;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
-.animate {
-    animation: pulse 4s infinite linear;
+.polka-dot:hover, .polka-dot:focus {
+    outline: 1px solid #fff;
+    animation: pulse 2s ease-out 6 alternate;
 }
 
 @keyframes pulse {
-    0% {
+    from {
         --dot-fade-offset: 0%;
         --dot-color: #fc466b;
     }
-    50% {
+    to {
         --dot-fade-offset: 100%;
         --dot-color: #3f5efb;
     }
+}
+
+.warning {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 20px;
+    border-top: 4px dashed #e8590c;
+    background-color: #ffe8cc;
+    color: #e8590c;
+    text-align: center;
+}
+
+.no-support .warning {
+    display: block;
+}
+
+.warning .fas {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }

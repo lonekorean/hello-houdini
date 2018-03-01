@@ -4,19 +4,19 @@ class PolkaDotFadePainter {
     }
 
     paint(ctx, size, props) {
-        let dotSpacing = props.get('--dot-spacing').value;
-        let dotFadeOffset = props.get('--dot-fade-offset').value;
-        let dotColor = props.get('--dot-color').toString();
+        let spacing = props.get('--dot-spacing').value;
+        let fadeOffset = props.get('--dot-fade-offset').value;
+        let color = props.get('--dot-color').toString();
 
-        ctx.fillStyle = dotColor;
-        for (let y = 0; y < size.height + dotSpacing; y += dotSpacing) {
-            for (let x = 0; x < size.width + dotSpacing; x += dotSpacing * 2) {
+        ctx.fillStyle = color;
+        for (let y = 0; y < size.height + spacing; y += spacing) {
+            for (let x = 0; x < size.width + spacing; x += spacing * 2) {
                 // every other row shifts x to create staggered dots
-                let staggerX = x + ((y / dotSpacing) % 2 === 1 ? dotSpacing : 0);
+                let staggerX = x + ((y / spacing) % 2 === 1 ? spacing : 0);
 
                 // calculate dot radius based on horizontal position and fade offset
-                let fadeRelativeX = staggerX - size.width * dotFadeOffset / 100;
-                let radius = dotSpacing * Math.max(Math.min(1 - fadeRelativeX / size.width, 1), 0);
+                let fadeRelativeX = staggerX - size.width * fadeOffset / 100;
+                let radius = spacing * Math.max(Math.min(1 - fadeRelativeX / size.width, 1), 0);
                 
                 // draw dot
                 ctx.beginPath();
