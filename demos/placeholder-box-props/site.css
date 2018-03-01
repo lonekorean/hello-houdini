@@ -7,13 +7,17 @@ html, body {
 }
 
 body {
+    margin: 0 20px;
+    background-image: linear-gradient(to bottom, #70e1f5, #ffd194);
+    font: 1rem/1.25 'Mukta Mahee', sans-serif;
+}
+
+.container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     align-items: center;
-    margin: 0 20px;
-    background-image: linear-gradient(to bottom, #70e1f5, #ffd194);
-    font: 1rem/1.25 'Mukta Mahee', sans-serif;
+    height: 100%;
 }
 
 .slot {
@@ -26,6 +30,7 @@ body {
 
     width: 120px;
     height: 120px;
+    max-height: 100vh;
     overflow: auto;
     resize: both;
 }

@@ -7,13 +7,17 @@ html, body {
 }
 
 body {
+    margin: 0 40px;
+    background: #000;
+    font: 1rem/1.25 'Mukta Mahee', sans-serif;
+}
+
+.container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
     align-items: center;
-    margin: 0 40px;
-    background: #000;
-    font: 1rem/1.25 'Mukta Mahee', sans-serif;
+    height: 100%;
 }
 
 .slot {
