@@ -41,12 +41,12 @@ body {
 }
 
 .slot:nth-child(1) .jagged {
-    background: linear-gradient(to right, #22c1c3, #fdbb2d);
+    background-image: linear-gradient(to right, #22c1c3, #fdbb2d);
 }
 
 .slot:nth-child(2) .jagged {
-    /* Pixel art from Iconoclasts, fun game! http://www.playiconoclasts.com/ */
-    background: url('iconoclasts.png');
+    /* pixel art from Iconoclasts, fun game! http://www.playiconoclasts.com/ */
+    background-image: url('iconoclasts.png');
     background-size: cover;
     background-position: 50% 0;
 }

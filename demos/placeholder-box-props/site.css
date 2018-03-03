@@ -26,8 +26,9 @@ body {
 }
 
 .placeholder {
-    background: #fff paint(placeholder-box-props);
+    background-image: paint(placeholder-box);
 
+    background-color: #fff;
     width: 120px;
     height: 120px;
     max-height: 100vh;
