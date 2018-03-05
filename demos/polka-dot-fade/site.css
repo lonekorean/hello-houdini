@@ -16,7 +16,7 @@ body {
     --dot-spacing: 20px;
     --dot-fade-offset: 0%;
     --dot-color: #40e0d0;
-    background: paint(polka-dot-fade);
+    background-image: paint(polka-dot-fade);
 
     position: absolute;
     top: 40px;

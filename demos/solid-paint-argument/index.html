@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Solid Paint Argument</title>
+        <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:400,700" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <link href="site.css" rel="stylesheet">
+
+        <script>
+            if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in window) {
+                CSS.paintWorklet.addModule('worklet.js');
+            } else {
+                document.querySelector('html').classList.add('no-support');
+            }
+        </script>
+    </head>
+    <body>
+        <div class="solid"></div>
+
+        <div class="warning">
+            <i class="fas fa-exclamation-triangle"></i><br>
+            This Houdini demo requires the <strong>CSS Paint API</strong>, <strong>CSS Properties and Values API</strong>, and <strong>Typed OM</strong>.<br>
+            Use <strong>Chrome</strong> and go to <strong>chrome://flags</strong> and enable <strong>Experimental Web Platform features</strong>.
+        </div>
+    </body>
+</html>

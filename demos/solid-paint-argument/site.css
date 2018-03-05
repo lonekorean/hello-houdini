@@ -12,40 +12,14 @@ body {
     font: 1rem/1.25 'Mukta Mahee', sans-serif;
 }
 
-.polka-dot {
-    --dot-spacing: 20px;
-    --dot-fade-offset: 0%;
-    --dot-color: #fc466b;
-    background-image: paint(polka-dot-fade);
+.solid {
+    background-image: paint(solid-paint-argument, #c0eb75);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     top: 40px;
     right: 40px;
     bottom: 40px;
     left: 40px;
-    color: #fff;
-    font-size: 6rem;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.polka-dot:hover, .polka-dot:focus {
-    outline: 1px solid #fff;
-    animation: pulse 2s ease-out 6 alternate;
-}
-
-@keyframes pulse {
-    from {
-        --dot-fade-offset: 0%;
-        --dot-color: #fc466b;
-    }
-    to {
-        --dot-fade-offset: 100%;
-        --dot-color: #3f5efb;
-    }
 }
 
 .warning {

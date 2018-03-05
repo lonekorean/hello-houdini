@@ -26,7 +26,7 @@ body {
 }
 
 .placeholder {
-    background-image: paint(placeholder-box);
+    background-image: paint(placeholder-box-props);
 
     background-color: #fff;
     width: 120px;
