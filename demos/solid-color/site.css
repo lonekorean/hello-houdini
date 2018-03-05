@@ -13,7 +13,7 @@ body {
 }
 
 .solid {
-    background-image: paint(solid-paint-argument, #c0eb75);
+    background-image: paint(solid-color, #c0eb75);
 
     position: absolute;
     top: 40px;

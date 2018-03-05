@@ -1,4 +1,4 @@
-class SolidPaintArgumentPainter {
+class SolidColorPainter {
     static get inputArguments() {
         return ['<color>'];
     }
@@ -9,4 +9,4 @@ class SolidPaintArgumentPainter {
     }
 }
 
-registerPaint('solid-paint-argument', SolidPaintArgumentPainter);
+registerPaint('solid-color', SolidColorPainter);
