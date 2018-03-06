@@ -1,0 +1,31 @@
+body {
+	max-width: 820px;
+	margin: 0 auto;
+    padding: 20px;
+    color: #495057;
+    background-color: #fff;
+	font: 1.25rem/1.5 'Mukta Mahee', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+a {
+	color: #66a80f;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+li {
+	padding-bottom: 20px;
+}
+
+.notes {
+	border-top: 1px dashed #adb5bd;
+}

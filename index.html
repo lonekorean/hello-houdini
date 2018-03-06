@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Some demos using Houdini's CSS Paint API.">
+
+        <title>Hello Houdini</title>
+
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
+        <link href="site.css" rel="stylesheet">
+    </head>
+    <body>
+		<h1>Hello Houdini</h1>
+		<p>
+			Some demos using Houdini's CSS Paint API.
+			Check out <a href="#">the tutorial article</a> for these demos or grab the source code from <a href="https://github.com/lonekorean/hello-houdini" target="_blank">this GitHub Repo</a>.
+        </p>
+		<ul>
+            <li>
+				<a href="demos/placeholder-box">Placeholder Box</a><br>
+				Simple paint worklet that draws an X to create a placeholder box.
+			</li>
+            <li>
+				<a href="demos/placeholder-box-props">Placeholder Box with Input Properties</a><br>
+				Uses input properties to match the element's border.
+			</li>
+            <li>
+				<a href="demos/jagged-edge">Jagged Edge</a><br>
+				Reads custom properties (CSS variables) to customize how the paint worklet draws.
+			</li>
+            <li>
+				<a href="demos/jagged-edge-mask">Jagged Edge with Mask</a><br>
+				Combines a paint worklet with -webkit-mask-image to create a "punch out" effect.
+			</li>
+            <li>
+				<a href="demos/solid-color">Fairly Useless Solid Color</a><br>
+				Emulates background-color. Fairly useless, but shows how to use input arguments.
+			</li>
+            <li>
+				<a href="demos/polka-dot-fade">Polka Dot Fade</a><br>
+				Creates a fading polka dot pattern using custom properties.
+			</li>
+            <li>
+				<a href="demos/polka-dot-fade-animated">Animated Polka Dot Fade</a><br>
+				Animates custom properties in CSS to animate the polka dot pattern.
+			</li>
+		</ul>
+        <div class="notes">
+            <p>
+                Created by <a href="https://twitter.com/lonekorean" target="_blank">Will Boyd</a>.
+            </p>
+        </div>
+    </body>
+</html>
