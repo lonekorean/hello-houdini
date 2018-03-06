@@ -10,6 +10,10 @@
         <link href="site.css" rel="stylesheet">
 
         <script>
+            if (location.hostname !== 'localhost' && location.protocol === 'http:') {
+                location.protocol = 'https:';
+            }
+
             if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in window) {
                 CSS.registerProperty({
                     name: '--dot-spacing',
