@@ -1,4 +1,4 @@
-class JaggedEdgeMaskPainter {
+class JaggedEdgePainter {
     static get inputProperties() {
         return ['--tooth-width', '--tooth-height'];
     }
@@ -32,4 +32,4 @@ class JaggedEdgeMaskPainter {
     }
 }
 
-registerPaint('jagged-edge-mask', JaggedEdgeMaskPainter);
+registerPaint('jagged-edge', JaggedEdgePainter);

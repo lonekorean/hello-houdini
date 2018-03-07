@@ -32,7 +32,7 @@ body {
 .jagged {
     --tooth-width: 80px;
     --tooth-height: 30px;
-    -webkit-mask-image: paint(jagged-edge-mask);
+    -webkit-mask-image: paint(jagged-edge);
 
     position: absolute;
     top: 30%;
