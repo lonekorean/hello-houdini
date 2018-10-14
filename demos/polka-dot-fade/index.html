@@ -18,17 +18,20 @@
                 CSS.registerProperty({
                     name: '--dot-spacing',
                     syntax: '<length>',
-                    initialValue: '20px'
+                    initialValue: '20px',
+                    inherits: true
                 });
                 CSS.registerProperty({
                     name: '--dot-fade-offset',
                     syntax: '<percentage>',
-                    initialValue: '0%'
+                    initialValue: '0%',
+                    inherits: true
                 });
                 CSS.registerProperty({
                     name: '--dot-color',
                     syntax: '<color>',
-                    initialValue: '#fff'
+                    initialValue: '#fff',
+                    inherits: true
                 });
                 CSS.paintWorklet.addModule('worklet.js');
             } else {

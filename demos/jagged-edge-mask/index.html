@@ -18,12 +18,14 @@
                 CSS.registerProperty({
                     name: '--tooth-width',
                     syntax: '<length>',
-                    initialValue: '40px'
+                    initialValue: '40px',
+                    inherits: true
                 });
                 CSS.registerProperty({
                     name: '--tooth-height',
                     syntax: '<length>',
-                    initialValue: '20px'
+                    initialValue: '20px',
+                    inherits: true
                 });
                 CSS.paintWorklet.addModule('worklet.js');
             } else {
